@@ -1,0 +1,156 @@
+@keyframes snow{
+    from{
+        background-position-y: 0, 0;
+    }
+    to{
+        background-position-y: 300px, 0;
+    }
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(Photo/snowflake.png), url(Photo/pexels-amy-t-1661908.jpg);
+  background-size: cover;
+    background-size: auto, cover;
+    background-position: fixed, fixed;
+    animation: snow 15s linear infinite;
+}
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1{
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-style: italic;
+}
+.audio-div{
+    display: flex;
+    justify-content: center;
+}
+.audio-setting{
+    display: block;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    
+}
+/* audio{} */
+/* iframe{
+    width: 300px;
+    height: 300px;
+} */
+.item{
+    text-align: center;
+    position: relative;
+    margin: 20px;
+    cursor: pointer;
+    perspective: 200vm;
+    /* max-height: 300px;
+    max-width: 300px; */
+}
+/* .audio{
+    margin-top: -200px;
+} */
+.item img{
+    display: block;
+}
+/* .item audio {
+    display: block;
+}
+.item iframe {
+    display: block;
+} */
+.item-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: pink;
+    width: 100%;
+    height: 100%;
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+    transform: rotateY(0deg);
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    /* backface-visibility: hidden; */
+}
+.open .item-overlay {
+    transform:rotateY(-95deg);
+}
+.item-number{
+    backface-visibility: hidden;
+}
+@media screen and (min-width: 900px) {
+    .item-container{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        /* max-width: 100%; */
+    }
+    
+}
+.citate{
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    /* height: 200px;
+    width: 200px;*/
+    transition: all 5s linear 1s;
+} 
+.citate:hover{
+    color: goldenrod;
+    background-color: palevioletred;
+    font-size: 50px;
+    letter-spacing: 10px;
+    width: 300px;
+    height: 300px;
+}
+.alert{
+    display: none;
+    height: 15%;
+    width: 15%;
+    padding: 10px;
+    font-style: normal;
+    position: fixed;
+    background-color: aqua;
+    border: 1px solid black;
+    animation-name: alert-box;
+    animation-duration: 20s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-out;
+    /*It repeats 5 times.*/
+    /* animation-iteration-count: infinite; */
+    /*for ever*/
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes alert-box{
+    /* 0%{left: 200px; top: 200px; }
+    50%{left: 400px; top: 200px;}
+    100%{left: 200px; top: 400px;} */
+    0%   { left:0px; top:0px;}
+    25%  {left:600px; top:0px;}
+    50%  { left:600px; top:600px;}
+    75%  { left:0px; top:600px;}
+    100% {left:0px; top:0px;}
+}
